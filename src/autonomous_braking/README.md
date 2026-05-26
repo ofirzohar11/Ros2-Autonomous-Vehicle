@@ -13,16 +13,13 @@
 ### Installation
 ```bash
 source /opt/ros/humble/setup.bash
-pip3 install pygame numpy --break-system-packages
-cp -r autonomous_braking ~/ros2_ws/src/
-cd ~/ros2_ws
-colcon build --packages-select autonomous_braking
-source install/setup.bash
+git clone <repo-url> ~/ros2_AB
+pip install pygame --break-system-packages
 ```
 
 ### Run
 ```bash
-ros2 launch autonomous_braking aeb_system.launch.py
+cd ~/ros2_AB && colcon build --packages-select autonomous_braking && source install/setup.bash && ros2 launch autonomous_braking aeb_system.launch.py
 ```
 
 ### Controls
