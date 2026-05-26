@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Compress-Archive -Path \"c:\\\\Users\\\\ofirz\\\\OneDrive\\\\Desktop\\\\רכב אוטונומי\\\\ros2_ws\" -DestinationPath \"C:\\\\Users\\\\ofirz\\\\Downloads\\\\ros2_ws.zip\" -Force; Write-Host \"Done. Size: $\\([math]::Round\\(\\(Get-Item 'C:\\\\Users\\\\ofirz\\\\Downloads\\\\ros2_ws.zip'\\).Length/1KB\\)\\) KB\")",
+      "Bash(python -c ' *)"
+    ]
+  }
+}

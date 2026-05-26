@@ -1,0 +1,24 @@
+[0.698s] Invoking command in '/home/user/ros2_ws7/src/autonomous_braking': PYTHONPATH=/home/user/ros2_ws7/build/autonomous_braking/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/user/ros2_ws7/install/autonomous_braking/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/autonomous_braking build --build-base /home/user/ros2_ws7/build/autonomous_braking/build install --record /home/user/ros2_ws7/build/autonomous_braking/install.log --single-version-externally-managed install_data
+[0.867s] /usr/local/lib/python3.10/dist-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'
+[0.868s]   warnings.warn(msg)
+[0.985s] running egg_info
+[1.003s] writing ../../build/autonomous_braking/autonomous_braking.egg-info/PKG-INFO
+[1.004s] writing dependency_links to ../../build/autonomous_braking/autonomous_braking.egg-info/dependency_links.txt
+[1.004s] writing entry points to ../../build/autonomous_braking/autonomous_braking.egg-info/entry_points.txt
+[1.005s] writing requirements to ../../build/autonomous_braking/autonomous_braking.egg-info/requires.txt
+[1.005s] writing top-level names to ../../build/autonomous_braking/autonomous_braking.egg-info/top_level.txt
+[1.044s] reading manifest file '../../build/autonomous_braking/autonomous_braking.egg-info/SOURCES.txt'
+[1.046s] writing manifest file '../../build/autonomous_braking/autonomous_braking.egg-info/SOURCES.txt'
+[1.046s] running build
+[1.046s] running build_py
+[1.047s] running install
+[1.051s] running install_lib
+[1.072s] running install_data
+[1.073s] running install_egg_info
+[1.094s] removing '/home/user/ros2_ws7/install/autonomous_braking/lib/python3.10/site-packages/autonomous_braking-2.0.0-py3.10.egg-info' (and everything under it)
+[1.095s] Copying ../../build/autonomous_braking/autonomous_braking.egg-info to /home/user/ros2_ws7/install/autonomous_braking/lib/python3.10/site-packages/autonomous_braking-2.0.0-py3.10.egg-info
+[1.096s] running install_scripts
+[1.135s] Installing simulation script to /home/user/ros2_ws7/install/autonomous_braking/lib/autonomous_braking
+[1.135s] Installing visualizer script to /home/user/ros2_ws7/install/autonomous_braking/lib/autonomous_braking
+[1.136s] writing list of installed files to '/home/user/ros2_ws7/build/autonomous_braking/install.log'
+[1.162s] Invoked command in '/home/user/ros2_ws7/src/autonomous_braking' returned '0': PYTHONPATH=/home/user/ros2_ws7/build/autonomous_braking/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/user/ros2_ws7/install/autonomous_braking/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/autonomous_braking build --build-base /home/user/ros2_ws7/build/autonomous_braking/build install --record /home/user/ros2_ws7/build/autonomous_braking/install.log --single-version-externally-managed install_data

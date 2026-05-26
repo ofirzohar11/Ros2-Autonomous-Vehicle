@@ -1,0 +1,51 @@
+[0.901s] Invoking command in '/home/user/ros2_ws7/src/autonomous_braking': PYTHONPATH=/home/user/ros2_ws7/build/autonomous_braking/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/user/ros2_ws7/install/autonomous_braking/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/autonomous_braking build --build-base /home/user/ros2_ws7/build/autonomous_braking/build install --record /home/user/ros2_ws7/build/autonomous_braking/install.log --single-version-externally-managed install_data
+[1.100s] /usr/local/lib/python3.10/dist-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'
+[1.100s]   warnings.warn(msg)
+[1.261s] running egg_info
+[1.279s] writing ../../build/autonomous_braking/autonomous_braking.egg-info/PKG-INFO
+[1.280s] writing dependency_links to ../../build/autonomous_braking/autonomous_braking.egg-info/dependency_links.txt
+[1.280s] writing entry points to ../../build/autonomous_braking/autonomous_braking.egg-info/entry_points.txt
+[1.281s] writing requirements to ../../build/autonomous_braking/autonomous_braking.egg-info/requires.txt
+[1.281s] writing top-level names to ../../build/autonomous_braking/autonomous_braking.egg-info/top_level.txt
+[1.338s] reading manifest file '../../build/autonomous_braking/autonomous_braking.egg-info/SOURCES.txt'
+[1.341s] writing manifest file '../../build/autonomous_braking/autonomous_braking.egg-info/SOURCES.txt'
+[1.341s] running build
+[1.341s] running build_py
+[1.341s] copying autonomous_braking/visualizer.py -> /home/user/ros2_ws7/build/autonomous_braking/build/lib/autonomous_braking
+[1.342s] copying autonomous_braking/simulation.py -> /home/user/ros2_ws7/build/autonomous_braking/build/lib/autonomous_braking
+[1.342s] copying autonomous_braking/__init__.py -> /home/user/ros2_ws7/build/autonomous_braking/build/lib/autonomous_braking
+[1.342s] copying autonomous_braking/config.py -> /home/user/ros2_ws7/build/autonomous_braking/build/lib/autonomous_braking
+[1.343s] running install
+[1.350s] running install_lib
+[1.372s] running install_data
+[1.372s] copying resource/autonomous_braking -> /home/user/ros2_ws7/install/autonomous_braking/share/ament_index/resource_index/packages
+[1.372s] copying package.xml -> /home/user/ros2_ws7/install/autonomous_braking/share/autonomous_braking
+[1.373s] copying launch/aeb_system.launch.py -> /home/user/ros2_ws7/install/autonomous_braking/share/autonomous_braking/launch
+[1.373s] copying config/aeb_params.yaml -> /home/user/ros2_ws7/install/autonomous_braking/share/autonomous_braking/config
+[1.373s] copying sprites/car_orange.png -> /home/user/ros2_ws7/install/autonomous_braking/share/autonomous_braking/sprites
+[1.375s] copying sprites/car_purple.png -> /home/user/ros2_ws7/install/autonomous_braking/share/autonomous_braking/sprites
+[1.377s] copying sprites/fallen_tree.png -> /home/user/ros2_ws7/install/autonomous_braking/share/autonomous_braking/sprites
+[1.379s] copying sprites/car.png -> /home/user/ros2_ws7/install/autonomous_braking/share/autonomous_braking/sprites
+[1.381s] copying sprites/bicycle.png -> /home/user/ros2_ws7/install/autonomous_braking/share/autonomous_braking/sprites
+[1.382s] copying sprites/child.png -> /home/user/ros2_ws7/install/autonomous_braking/share/autonomous_braking/sprites
+[1.384s] copying sprites/motorcycle.png -> /home/user/ros2_ws7/install/autonomous_braking/share/autonomous_braking/sprites
+[1.386s] copying sprites/ball.png -> /home/user/ros2_ws7/install/autonomous_braking/share/autonomous_braking/sprites
+[1.387s] copying sprites/pedestrian.png -> /home/user/ros2_ws7/install/autonomous_braking/share/autonomous_braking/sprites
+[1.389s] copying sprites/car_blue.png -> /home/user/ros2_ws7/install/autonomous_braking/share/autonomous_braking/sprites
+[1.392s] copying sprites/animal.png -> /home/user/ros2_ws7/install/autonomous_braking/share/autonomous_braking/sprites
+[1.394s] copying sprites/car_white.png -> /home/user/ros2_ws7/install/autonomous_braking/share/autonomous_braking/sprites
+[1.396s] copying sprites/road_tile.png -> /home/user/ros2_ws7/install/autonomous_braking/share/autonomous_braking/sprites
+[1.396s] copying sprites/truck.png -> /home/user/ros2_ws7/install/autonomous_braking/share/autonomous_braking/sprites
+[1.398s] copying sprites/ego.png -> /home/user/ros2_ws7/install/autonomous_braking/share/autonomous_braking/sprites
+[1.399s] copying sprites/car_yellow.png -> /home/user/ros2_ws7/install/autonomous_braking/share/autonomous_braking/sprites
+[1.405s] copying sprites/car_gray.png -> /home/user/ros2_ws7/install/autonomous_braking/share/autonomous_braking/sprites
+[1.406s] copying sprites/car_green.png -> /home/user/ros2_ws7/install/autonomous_braking/share/autonomous_braking/sprites
+[1.406s] copying sprites/car_red.png -> /home/user/ros2_ws7/install/autonomous_braking/share/autonomous_braking/sprites
+[1.408s] running install_egg_info
+[1.442s] removing '/home/user/ros2_ws7/install/autonomous_braking/lib/python3.10/site-packages/autonomous_braking-2.0.0-py3.10.egg-info' (and everything under it)
+[1.442s] Copying ../../build/autonomous_braking/autonomous_braking.egg-info to /home/user/ros2_ws7/install/autonomous_braking/lib/python3.10/site-packages/autonomous_braking-2.0.0-py3.10.egg-info
+[1.443s] running install_scripts
+[1.490s] Installing simulation script to /home/user/ros2_ws7/install/autonomous_braking/lib/autonomous_braking
+[1.490s] Installing visualizer script to /home/user/ros2_ws7/install/autonomous_braking/lib/autonomous_braking
+[1.490s] writing list of installed files to '/home/user/ros2_ws7/build/autonomous_braking/install.log'
+[1.523s] Invoked command in '/home/user/ros2_ws7/src/autonomous_braking' returned '0': PYTHONPATH=/home/user/ros2_ws7/build/autonomous_braking/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/user/ros2_ws7/install/autonomous_braking/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/autonomous_braking build --build-base /home/user/ros2_ws7/build/autonomous_braking/build install --record /home/user/ros2_ws7/build/autonomous_braking/install.log --single-version-externally-managed install_data

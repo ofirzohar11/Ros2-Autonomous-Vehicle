@@ -1,0 +1,73 @@
+[0.686s] Invoking command in '/home/user/ros2_ws/src/autonomous_braking': PYTHONPATH=/home/user/ros2_ws/build/autonomous_braking/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/user/ros2_ws/install/autonomous_braking/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/autonomous_braking build --build-base /home/user/ros2_ws/build/autonomous_braking/build install --record /home/user/ros2_ws/build/autonomous_braking/install.log --single-version-externally-managed install_data
+[0.853s] /usr/local/lib/python3.10/dist-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'
+[0.853s]   warnings.warn(msg)
+[0.889s] /usr/local/lib/python3.10/dist-packages/setuptools/dist.py:759: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+[0.889s] !!
+[0.889s] 
+[0.890s]         ********************************************************************************
+[0.890s]         Please consider removing the following classifiers in favor of a SPDX license expression:
+[0.890s] 
+[0.890s]         License :: OSI Approved :: MIT License
+[0.890s] 
+[0.890s]         See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+[0.890s]         ********************************************************************************
+[0.890s] 
+[0.890s] !!
+[0.891s]   self._finalize_license_expression()
+[0.973s] running egg_info
+[0.992s] creating ../../build/autonomous_braking/autonomous_braking.egg-info
+[0.992s] writing ../../build/autonomous_braking/autonomous_braking.egg-info/PKG-INFO
+[0.993s] writing dependency_links to ../../build/autonomous_braking/autonomous_braking.egg-info/dependency_links.txt
+[0.993s] writing entry points to ../../build/autonomous_braking/autonomous_braking.egg-info/entry_points.txt
+[0.993s] writing requirements to ../../build/autonomous_braking/autonomous_braking.egg-info/requires.txt
+[0.994s] writing top-level names to ../../build/autonomous_braking/autonomous_braking.egg-info/top_level.txt
+[0.994s] writing manifest file '../../build/autonomous_braking/autonomous_braking.egg-info/SOURCES.txt'
+[1.043s] reading manifest file '../../build/autonomous_braking/autonomous_braking.egg-info/SOURCES.txt'
+[1.044s] writing manifest file '../../build/autonomous_braking/autonomous_braking.egg-info/SOURCES.txt'
+[1.044s] running build
+[1.045s] running build_py
+[1.045s] creating /home/user/ros2_ws/build/autonomous_braking/build/lib/autonomous_braking
+[1.045s] copying autonomous_braking/visualizer.py -> /home/user/ros2_ws/build/autonomous_braking/build/lib/autonomous_braking
+[1.045s] copying autonomous_braking/vehicle_dynamics.py -> /home/user/ros2_ws/build/autonomous_braking/build/lib/autonomous_braking
+[1.046s] copying autonomous_braking/simulation.py -> /home/user/ros2_ws/build/autonomous_braking/build/lib/autonomous_braking
+[1.046s] copying autonomous_braking/__init__.py -> /home/user/ros2_ws/build/autonomous_braking/build/lib/autonomous_braking
+[1.046s] copying autonomous_braking/lidar_sensor.py -> /home/user/ros2_ws/build/autonomous_braking/build/lib/autonomous_braking
+[1.046s] copying autonomous_braking/lane_controller.py -> /home/user/ros2_ws/build/autonomous_braking/build/lib/autonomous_braking
+[1.046s] copying autonomous_braking/config.py -> /home/user/ros2_ws/build/autonomous_braking/build/lib/autonomous_braking
+[1.047s] copying autonomous_braking/obstacle_manager.py -> /home/user/ros2_ws/build/autonomous_braking/build/lib/autonomous_braking
+[1.047s] running install
+[1.053s] running install_lib
+[1.075s] creating /home/user/ros2_ws/install/autonomous_braking/lib/python3.10/site-packages/autonomous_braking
+[1.075s] copying /home/user/ros2_ws/build/autonomous_braking/build/lib/autonomous_braking/visualizer.py -> /home/user/ros2_ws/install/autonomous_braking/lib/python3.10/site-packages/autonomous_braking
+[1.075s] copying /home/user/ros2_ws/build/autonomous_braking/build/lib/autonomous_braking/vehicle_dynamics.py -> /home/user/ros2_ws/install/autonomous_braking/lib/python3.10/site-packages/autonomous_braking
+[1.075s] copying /home/user/ros2_ws/build/autonomous_braking/build/lib/autonomous_braking/simulation.py -> /home/user/ros2_ws/install/autonomous_braking/lib/python3.10/site-packages/autonomous_braking
+[1.075s] copying /home/user/ros2_ws/build/autonomous_braking/build/lib/autonomous_braking/__init__.py -> /home/user/ros2_ws/install/autonomous_braking/lib/python3.10/site-packages/autonomous_braking
+[1.075s] copying /home/user/ros2_ws/build/autonomous_braking/build/lib/autonomous_braking/lidar_sensor.py -> /home/user/ros2_ws/install/autonomous_braking/lib/python3.10/site-packages/autonomous_braking
+[1.075s] copying /home/user/ros2_ws/build/autonomous_braking/build/lib/autonomous_braking/lane_controller.py -> /home/user/ros2_ws/install/autonomous_braking/lib/python3.10/site-packages/autonomous_braking
+[1.075s] copying /home/user/ros2_ws/build/autonomous_braking/build/lib/autonomous_braking/config.py -> /home/user/ros2_ws/install/autonomous_braking/lib/python3.10/site-packages/autonomous_braking
+[1.075s] copying /home/user/ros2_ws/build/autonomous_braking/build/lib/autonomous_braking/obstacle_manager.py -> /home/user/ros2_ws/install/autonomous_braking/lib/python3.10/site-packages/autonomous_braking
+[1.076s] byte-compiling /home/user/ros2_ws/install/autonomous_braking/lib/python3.10/site-packages/autonomous_braking/visualizer.py to visualizer.cpython-310.pyc
+[1.084s] byte-compiling /home/user/ros2_ws/install/autonomous_braking/lib/python3.10/site-packages/autonomous_braking/vehicle_dynamics.py to vehicle_dynamics.cpython-310.pyc
+[1.086s] byte-compiling /home/user/ros2_ws/install/autonomous_braking/lib/python3.10/site-packages/autonomous_braking/simulation.py to simulation.cpython-310.pyc
+[1.088s] byte-compiling /home/user/ros2_ws/install/autonomous_braking/lib/python3.10/site-packages/autonomous_braking/__init__.py to __init__.cpython-310.pyc
+[1.088s] byte-compiling /home/user/ros2_ws/install/autonomous_braking/lib/python3.10/site-packages/autonomous_braking/lidar_sensor.py to lidar_sensor.cpython-310.pyc
+[1.090s] byte-compiling /home/user/ros2_ws/install/autonomous_braking/lib/python3.10/site-packages/autonomous_braking/lane_controller.py to lane_controller.cpython-310.pyc
+[1.092s] byte-compiling /home/user/ros2_ws/install/autonomous_braking/lib/python3.10/site-packages/autonomous_braking/config.py to config.cpython-310.pyc
+[1.093s] byte-compiling /home/user/ros2_ws/install/autonomous_braking/lib/python3.10/site-packages/autonomous_braking/obstacle_manager.py to obstacle_manager.cpython-310.pyc
+[1.094s] running install_data
+[1.095s] creating /home/user/ros2_ws/install/autonomous_braking/share/ament_index/resource_index/packages
+[1.095s] copying resource/autonomous_braking -> /home/user/ros2_ws/install/autonomous_braking/share/ament_index/resource_index/packages
+[1.095s] copying package.xml -> /home/user/ros2_ws/install/autonomous_braking/share/autonomous_braking
+[1.095s] creating /home/user/ros2_ws/install/autonomous_braking/share/autonomous_braking/launch
+[1.096s] copying launch/aeb_system.launch.py -> /home/user/ros2_ws/install/autonomous_braking/share/autonomous_braking/launch
+[1.096s] creating /home/user/ros2_ws/install/autonomous_braking/share/autonomous_braking/config
+[1.096s] copying config/aeb_params.yaml -> /home/user/ros2_ws/install/autonomous_braking/share/autonomous_braking/config
+[1.096s] running install_egg_info
+[1.118s] Copying ../../build/autonomous_braking/autonomous_braking.egg-info to /home/user/ros2_ws/install/autonomous_braking/lib/python3.10/site-packages/autonomous_braking-2.0.0-py3.10.egg-info
+[1.119s] running install_scripts
+[1.163s] Installing ego_controller script to /home/user/ros2_ws/install/autonomous_braking/lib/autonomous_braking
+[1.163s] Installing full_system script to /home/user/ros2_ws/install/autonomous_braking/lib/autonomous_braking
+[1.163s] Installing simulation script to /home/user/ros2_ws/install/autonomous_braking/lib/autonomous_braking
+[1.163s] Installing visualizer script to /home/user/ros2_ws/install/autonomous_braking/lib/autonomous_braking
+[1.164s] writing list of installed files to '/home/user/ros2_ws/build/autonomous_braking/install.log'
+[1.188s] Invoked command in '/home/user/ros2_ws/src/autonomous_braking' returned '0': PYTHONPATH=/home/user/ros2_ws/build/autonomous_braking/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/user/ros2_ws/install/autonomous_braking/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/autonomous_braking build --build-base /home/user/ros2_ws/build/autonomous_braking/build install --record /home/user/ros2_ws/build/autonomous_braking/install.log --single-version-externally-managed install_data

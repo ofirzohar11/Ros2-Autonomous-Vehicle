@@ -1,0 +1,20 @@
+running egg_info
+writing ../../build/autonomous_braking/autonomous_braking.egg-info/PKG-INFO
+writing dependency_links to ../../build/autonomous_braking/autonomous_braking.egg-info/dependency_links.txt
+writing entry points to ../../build/autonomous_braking/autonomous_braking.egg-info/entry_points.txt
+writing requirements to ../../build/autonomous_braking/autonomous_braking.egg-info/requires.txt
+writing top-level names to ../../build/autonomous_braking/autonomous_braking.egg-info/top_level.txt
+reading manifest file '../../build/autonomous_braking/autonomous_braking.egg-info/SOURCES.txt'
+writing manifest file '../../build/autonomous_braking/autonomous_braking.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+running install_egg_info
+removing '/home/user/ros2_ws7/install/autonomous_braking/lib/python3.10/site-packages/autonomous_braking-2.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/autonomous_braking/autonomous_braking.egg-info to /home/user/ros2_ws7/install/autonomous_braking/lib/python3.10/site-packages/autonomous_braking-2.0.0-py3.10.egg-info
+running install_scripts
+Installing simulation script to /home/user/ros2_ws7/install/autonomous_braking/lib/autonomous_braking
+Installing visualizer script to /home/user/ros2_ws7/install/autonomous_braking/lib/autonomous_braking
+writing list of installed files to '/home/user/ros2_ws7/build/autonomous_braking/install.log'

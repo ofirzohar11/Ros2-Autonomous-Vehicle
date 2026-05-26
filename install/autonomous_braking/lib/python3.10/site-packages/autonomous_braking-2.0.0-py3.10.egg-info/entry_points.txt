@@ -1,0 +1,3 @@
+[console_scripts]
+simulation = autonomous_braking.simulation:main
+visualizer = autonomous_braking.visualizer:main

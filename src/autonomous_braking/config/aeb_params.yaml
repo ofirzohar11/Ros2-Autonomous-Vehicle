@@ -1,0 +1,21 @@
+# AEB System Configuration v2.0
+# ================================
+
+world_simulation:
+  ros__parameters:
+    cruise_speed_kmh: 90.0
+    max_speed_kmh: 120.0
+    max_traffic_vehicles: 3
+    min_traffic_vehicles: 1
+    obstacle_spawn_interval_min: 8.0
+    obstacle_spawn_interval_max: 20.0
+    safe_distance: 30.0
+    warning_distance: 20.0
+    danger_distance: 6.0
+    emergency_distance: 3.0
+
+aeb_visualizer:
+  ros__parameters:
+    width: 800
+    height: 200
+    fps: 120
