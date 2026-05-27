@@ -781,7 +781,7 @@ class WorldSimulation(Node):
             self.brake_intensity = 1.0
             self.target_speed = 0.0
             # Never lane-change for pedestrians/animals — only for static/stopped obstacles
-            if not self.is_changing_lane and self.ego.vy > 5.0 and do_lc:
+            if not self.is_changing_lane and do_lc:
                 self._try_lane_change(all_objects)
             if prev_status != VehicleStatus.EMERGENCY:
                 self.braking_events += 1
@@ -848,7 +848,8 @@ class WorldSimulation(Node):
 
         for obj in all_objects:
             lateral_dist = abs(obj.x - lane_x)
-            if lateral_dist > ROAD.lane_width * 0.7:
+            effective_lateral = max(0.0, lateral_dist - obj.width / 2.0)
+            if effective_lateral > ROAD.lane_width * 0.7:
                 continue
 
             rel_y = obj.y - self.ego.y
