@@ -100,8 +100,6 @@ ros2_AB/
 │       │   └── visualizer.py       # Pygame rendering and HUD dashboard
 │       ├── launch/
 │       │   └── aeb_system.launch.py
-│       ├── config/
-│       │   └── aeb_params.yaml
 │       ├── sprites/             # PNG assets
 │       ├── package.xml
 │       └── setup.py
@@ -189,6 +187,8 @@ Scenarios trigger **automatically** every 6–11 seconds during the simulation.
 - **Beams:** 120 rays
 - **Range:** up to 150 m
 - Detects all obstacle types: cars, pedestrians, children, motorcycles, bicycles, animals, fallen trees
+
+> **Note on fidelity:** The LIDAR model (ray-casting + Gaussian noise) drives the on-screen sensor visualization. The AEB decision logic itself reads the simulated obstacle positions directly (ground-truth), so detection is deterministic and noise-free — typical for a control-focused simulation.
 
 ---
 

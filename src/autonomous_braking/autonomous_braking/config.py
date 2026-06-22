@@ -116,16 +116,16 @@ class BrakePIDConfig:
 
 @dataclass
 class SafetyConfig:
+    # FSM distance zones (metres). The EMERGENCY zone is everything closer
+    # than danger_distance, so it needs no separate threshold.
     safe_distance: float = 30.0
     caution_distance: float = 20.0
     warning_distance: float = 15.0
     danger_distance: float = 10.0
-    emergency_distance: float = 6.0
-    ttc_safe: float = 4.0
-    ttc_warning: float = 2.0
+    # Time-to-collision overrides (seconds). Only the danger/emergency
+    # thresholds drive behaviour today.
     ttc_danger: float = 1.3
     ttc_emergency: float = 0.8
-    min_safe_gap: float = 3.0
 
 
 @dataclass

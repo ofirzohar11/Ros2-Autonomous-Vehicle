@@ -224,7 +224,7 @@ class WorldSimulation(Node):
         self.lidar_points: List[Dict] = []
 
         # ── Scenario system ─────────────────────────────────────
-        # Random driving events are triggered every 3–6 seconds.
+        # Random driving events are triggered every 6–11 seconds.
         # One of four scenarios is selected: front_brake, tree_right,
         # tree_left, or pedestrian.  Each has a clear start/active/end phase.
         self.active_scenario: Optional[str] = None   # key into SCENARIO_NAMES
@@ -374,7 +374,7 @@ class WorldSimulation(Node):
     def _try_trigger_scenario(self):
         """
         Increment idle timer and trigger the next random scenario once
-        the interval (3–6 s) has elapsed and the road is not already busy.
+        the interval (6–11 s) has elapsed and the road is not already busy.
         """
         if self.scenario_state != 'idle':
             return
@@ -453,7 +453,9 @@ class WorldSimulation(Node):
                 x=tree_x,
                 y=self.ego.y + spawn_dist,
                 vx=0.0, vy=0.0,
-                width=ROAD.lane_width * 2.2,  # wide enough to block 2 lanes
+                # Blocks the ego lane and the right lane it sits between;
+                # the ego can still clear it by changing one lane left.
+                width=ROAD.lane_width * 1.1,
                 length=2.5, height=1.2,
                 lane=ego_lane,
                 behavior=ObstacleBehavior.STATIC,
@@ -473,7 +475,9 @@ class WorldSimulation(Node):
                 x=tree_x,
                 y=self.ego.y + spawn_dist,
                 vx=0.0, vy=0.0,
-                width=ROAD.lane_width * 2.2,
+                # Blocks the ego lane and the left lane it sits between;
+                # the ego can still clear it by changing one lane right.
+                width=ROAD.lane_width * 1.1,
                 length=2.5, height=1.2,
                 lane=ego_lane,
                 behavior=ObstacleBehavior.STATIC,
@@ -723,9 +727,14 @@ class WorldSimulation(Node):
             error = desired_gap − actual_distance   (positive ⇒ too close)
             brake = clamp(Kp·error + Ki·∫ + Kd·d/dt, 0, 1)
 
-        Only engages when a relevant obstacle is within sensing range;
-        otherwise the controller is held reset so it reacts instantly the
-        next time something appears.
+        The brake only engages when we are actually *closing in* on the
+        obstacle, or when we are inside a hard minimum gap. A lead vehicle
+        travelling at our own speed (closing speed ≈ 0) is handled smoothly
+        by the speed PID's adaptive-cruise following instead of by braking —
+        this avoids phantom/oscillating braking against same-speed traffic.
+
+        Otherwise the controller is held reset so it reacts instantly the
+        next time something starts closing.
         """
         if nearest_obj is None or nearest_dist > SAFETY.safe_distance:
             self.brake_pid.reset()
@@ -735,6 +744,17 @@ class WorldSimulation(Node):
 
         self.desired_gap = self._desired_gap()
         self.gap_error = self.desired_gap - nearest_dist
+
+        # Hard minimum gap: below this we always brake, even at matched speed.
+        hard_floor = BRAKE_PID.min_gap + 0.5 * BRAKE_PID.time_headway * self.ego.vy
+        closing_speed = self.ego.vy - nearest_obj.vy   # >0 ⇒ gap shrinking
+
+        if closing_speed <= 0.3 and nearest_dist > hard_floor:
+            # Stable or opening gap and not dangerously close → let the
+            # speed PID keep station; hold the brake controller reset.
+            self.brake_pid.reset()
+            return 0.0
+
         return self.brake_pid.update(self.desired_gap, nearest_dist, self.dt)
 
     def _aeb_decision(self):
@@ -757,8 +777,11 @@ class WorldSimulation(Node):
             if rel_y < 2.0:
                 continue
 
+            # Account for the obstacle's own width so a wide object that
+            # only partly intrudes into the ego lane is still detected.
             lateral_dist = abs(obj.x - self.ego.x)
-            if lateral_dist < (ROAD.lane_width * 0.7):
+            effective_lateral = max(0.0, lateral_dist - obj.width / 2.0)
+            if effective_lateral < (ROAD.lane_width * 0.7):
                 if rel_y < nearest_dist:
                     nearest_dist = rel_y
                     nearest_obj = obj
@@ -790,7 +813,7 @@ class WorldSimulation(Node):
             self.target_speed = PHYSICS.cruise_speed_kmh / 3.6 + self.human_speed_offset
 
         elif nearest_dist > SAFETY.caution_distance:
-            # ── CAUTION (35–50 m) ─────────────────────────────────────────
+            # ── CAUTION (20–30 m) ─────────────────────────────────────────
             self.status = VehicleStatus.CAUTION
             if do_lc:
                 # Stopped / static obstacle ahead → prepare lane change
@@ -802,7 +825,7 @@ class WorldSimulation(Node):
                 self.target_speed = nearest_obj.vy * 0.97
 
         elif nearest_dist > SAFETY.warning_distance:
-            # ── WARNING (20–35 m) ─────────────────────────────────────────
+            # ── WARNING (15–20 m) ─────────────────────────────────────────
             self.status = VehicleStatus.WARNING
             if do_lc:
                 self.target_speed = PHYSICS.cruise_speed_kmh / 3.6 * 0.55
@@ -813,7 +836,7 @@ class WorldSimulation(Node):
                 self.target_speed = nearest_obj.vy * 0.93
 
         elif nearest_dist > SAFETY.danger_distance:
-            # ── DANGER (12–20 m) ──────────────────────────────────────────
+            # ── DANGER (10–15 m) ──────────────────────────────────────────
             self.status = VehicleStatus.DANGER
             self.target_speed = max(0.0, self.ego.vy * 0.25)
             if not self.is_changing_lane and do_lc:
@@ -822,7 +845,7 @@ class WorldSimulation(Node):
                 self.braking_events += 1
 
         else:
-            # ── EMERGENCY (< 12 m) ────────────────────────────────────────
+            # ── EMERGENCY (< 10 m) ────────────────────────────────────────
             self.status = VehicleStatus.EMERGENCY
             self.target_speed = 0.0
             # Never lane-change for pedestrians/animals — only for static/stopped obstacles
