@@ -36,7 +36,7 @@ LIDAR Sensor → Obstacle Detection → FSM Safety State (policy)
 
 > The braking force in every state is computed by the **Brake PID** based on how far the vehicle is *inside* its safe following gap — **except** in the EMERGENCY range / on a critical TTC, where a hard override forces **100% braking** as a deterministic safety reflex.
 
-> **TTC Override:** If Time-To-Collision < 0.8 seconds, the emergency full-brake is triggered regardless of distance.
+> **TTC Override:** If Time-To-Collision < 0.8 seconds *and* the obstacle is within the warning range (< 15 m), the emergency full-brake is triggered regardless of the current FSM zone.
 
 ---
 
@@ -187,7 +187,7 @@ Scenarios trigger **automatically** every 6–11 seconds during the simulation.
 
 - **FOV:** ±60° (forward-facing)
 - **Beams:** 120 rays
-- **Range:** up to 60 m
+- **Range:** up to 150 m
 - Detects all obstacle types: cars, pedestrians, children, motorcycles, bicycles, animals, fallen trees
 
 ---
